@@ -1,8 +1,47 @@
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.layout.GridPane?>
+<?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<GridPane fx:controller="sample.Controller"
-          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
-</GridPane>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <top>
+        <MenuBar>
+            <Menu text="File">
+                <MenuItem text="Open" onAction="#unsupported"/>
+                <MenuItem text="Save" onAction="#unsupported"/>
+                <MenuItem text="Close" onAction="#unsupported"/>
+                <MenuItem onAction="#exitClick" text="Exit" />
+            </Menu>
+            <Menu text="Edit">
+                <MenuItem text="Copy" onAction="#unsupported"/>
+                <MenuItem text="Paste" onAction="#unsupported"/>
+                <MenuItem text="Cut" onAction="#unsupported"/>
+            </Menu>
+            <Menu text="Settings">
+                <MenuItem text="User name" onAction="#unsupported"/>
+                <MenuItem text="Connection properties" onAction="#unsupported"/>
+                <MenuItem text="Chat windows settings" onAction="#unsupported"/>
+            </Menu>
+        </MenuBar>
+    </top>
+
+    <center>
+        <TextArea fx:id="textArea" promptText="Здесь будут отображаться сообщения участников чата" editable="false" />
+    </center>
+
+    <bottom>
+        <HBox>
+            <TextField fx:id="textField" prefHeight="26.0" prefWidth="500.0" promptText="Введите текст" onAction="#sendMessage"/>
+            <Button onAction="#sendMessage" prefHeight="26.0" prefWidth="140.0" text="Отправить" />
+        </HBox>
+    </bottom>
+
+    <right>
+
+    </right>
+
+    <left>
+
+    </left>
+
+</BorderPane>
